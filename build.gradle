@@ -89,8 +89,8 @@ minecraft {
                 ThermalCore {
                     source findProject(':ThermalCore').sourceSets.main
                 }
-                ThermalHorizons {
-                    source findProject(':ThermalHorizons').sourceSets.main
+                ThermalAtomics {
+                    source findProject(':ThermalAtomics').sourceSets.main
                 }
             }
         }
@@ -102,6 +102,11 @@ dependencies {
 
     compileOnly fg.deobf("mezz.jei:jei-${mc_version}:${jei_version}:api")
     runtimeOnly fg.deobf("mezz.jei:jei-${mc_version}:${jei_version}")
+
+    compileOnly fg.deobf("com.blamejared.crafttweaker:CraftTweaker-1.16.5:${crt_version}")
+
+    compileOnly fg.deobf("vazkii.patchouli:Patchouli:${patchouli_version}:api")
+    runtimeOnly fg.deobf("vazkii.patchouli:Patchouli:${patchouli_version}")
 
     if (findProject(':CoFHCore') != null) {
         compile project(':CoFHCore')
